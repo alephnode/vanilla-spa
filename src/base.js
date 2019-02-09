@@ -1,18 +1,26 @@
-export default (tn, tpl) => {
-  const template = document.createElement('template')
-  template.innerHTML = tpl
+class Base extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+  }
+  connectedCallback() {
+    this._render()
+    this.onMount()
+  }
 
-  const register = () =>
-    customElements.define(
-      tn,
-      class extends HTMLElement {
-        connectedCallback() {
-          if (!this.shadowRoot) {
-            this.attachShadow({ mode: 'open' })
-            this.shadowRoot.appendChild(template.content.cloneNode(true))
-          }
-        }
-      }
-    )
-  window.WebComponents ? window.WebComponents.waitFor(register) : register()
+  disconnectedCallback() {
+    this.onUnmount()
+  }
+
+  _render() {
+    const template = document.createElement('template')
+    template.innerHTML = this.html()
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
+
+  /*abstract*/ onMount() {}
+  /*abstract*/ onUnmount() {}
+  /*abstract*/ html() {}
 }
+
+export default Base
