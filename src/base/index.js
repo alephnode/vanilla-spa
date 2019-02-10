@@ -15,6 +15,20 @@ class Base extends HTMLElement {
     this.onUnmount()
   }
 
+  dispatch(event, detail) {
+    this.dispatchEvent(
+      new CustomEvent(event, { detail, bubbles: true, composed: true })
+    )
+  }
+
+  getChild(qry) {
+    return this.shadowRoot.querySelector(qry)
+  }
+
+  getChildren(qry) {
+    return this.shadowRoot.querySelectorAll(qry)
+  }
+
   _render() {
     render(this.tpl(), this.shadowRoot)
   }
