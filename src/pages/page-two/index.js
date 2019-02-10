@@ -1,5 +1,6 @@
 import { html } from 'lit-html'
 import Base from '../../base'
+import registerComponent from '../../common/register-component'
 
 class VPageTwo extends Base {
   _html() {
@@ -9,7 +10,4 @@ class VPageTwo extends Base {
   }
 }
 
-(() => {
-  const register = () => customElements.define('v-page-two', VPageTwo)
-  window.WebComponents ? window.WebComponents.waitFor(register) : register()
-})()
+registerComponent('v-page-two', VPageTwo)

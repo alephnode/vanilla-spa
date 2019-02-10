@@ -1,5 +1,6 @@
 import { html } from 'lit-html'
 import Base from '../../base'
+import registerComponent from '../../common/register-component'
 
 class VHeadline extends Base {
   _html() {
@@ -12,7 +13,4 @@ class VHeadline extends Base {
   }
 }
 
-(() => {
-  const register = () => customElements.define('v-headline', VHeadline)
-  window.WebComponents ? window.WebComponents.waitFor(register) : register()
-})()
+registerComponent('v-headline', VHeadline)

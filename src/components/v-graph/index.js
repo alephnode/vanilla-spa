@@ -1,5 +1,6 @@
 import { html } from 'lit-html'
 import Base from '../../base'
+import registerComponent from '../../common/register-component'
 
 class VGraph extends Base {
   _html() {
@@ -12,7 +13,4 @@ class VGraph extends Base {
   }
 }
 
-(() => {
-  const register = () => customElements.define('v-graph', VGraph)
-  window.WebComponents ? window.WebComponents.waitFor(register) : register()
-})()
+registerComponent('v-graph', VGraph)

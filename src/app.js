@@ -1,5 +1,6 @@
 import { html } from 'lit-html'
 import Base from './base'
+import registerComponent from './common/register-component'
 import './components/v-headline'
 import './components/v-graph'
 import './pages/page-one'
@@ -14,15 +15,13 @@ class VApp extends Base {
   _html() {
     return html`
       <div>
-        <v-headline text="Back in business"></v-headline>
-        <v-graph text="Even more content coming soon ..."></v-graph>
-        <button @click=${this.handleClick}>do it</button>
+        <v-headline text="woot"></v-headline>
+        <v-graph text="there it is"></v-graph>
+        <v-page-one></v-page-one>
+        <v-page-two></v-page-tw0>
       </div>
     `
   }
 }
 
-(() => {
-  const register = () => customElements.define('v-app', VApp)
-  window.WebComponents ? window.WebComponents.waitFor(register) : register()
-})()
+registerComponent('v-app', VApp)
