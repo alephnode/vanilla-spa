@@ -4,7 +4,6 @@ import Base from './base'
 import registerComponent from './common/register-component'
 import './components/v-router'
 import './components/v-headline'
-import './components/v-graph'
 import './pages/page-one'
 import './pages/page-two'
 
@@ -39,9 +38,8 @@ class VApp extends Base {
     return this.htmlToRender
       ? html`
           <div>
-            <v-headline text="woot"></v-headline>
+            <v-headline>Vanilla Website</v-headline>
             <v-router></v-router>
-            <v-graph text="there it is"></v-graph>
             ${this.htmlToRender}
           </div>
         `
