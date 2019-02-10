@@ -1,8 +1,11 @@
+import { render } from 'lit-html'
+
 class Base extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
   }
+
   connectedCallback() {
     this._render()
     this.onMount()
@@ -13,14 +16,12 @@ class Base extends HTMLElement {
   }
 
   _render() {
-    const template = document.createElement('template')
-    template.innerHTML = this.html()
-    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    render(this._html(), this.shadowRoot)
   }
 
   /*abstract*/ onMount() {}
   /*abstract*/ onUnmount() {}
-  /*abstract*/ html() {}
+  /*abstract*/ _html() {}
 }
 
 export default Base

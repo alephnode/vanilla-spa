@@ -4,5 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "http-server -p 6505"
+  },
+  "dependencies": {
+    "lit-html": "^1.0.0"
   }
 }

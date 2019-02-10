@@ -2,7 +2,7 @@ import Base from '../../base.js'
 import styles from './styles.js'
 
 class VHeadline extends Base {
-  html() {
+  _html() {
     const tpl = txt => `
           ${styles}
           <h1>
@@ -13,7 +13,7 @@ class VHeadline extends Base {
   }
 }
 
-;(() => {
+(() => {
   const register = () => customElements.define('v-headline', VHeadline)
   window.WebComponents ? window.WebComponents.waitFor(register) : register()
 })()
