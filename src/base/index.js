@@ -11,6 +11,10 @@ class Base extends HTMLElement {
     this.onMount()
   }
 
+  updateTpl() {
+    this._render()
+  }
+
   disconnectedCallback() {
     this.onUnmount()
   }

@@ -2,8 +2,8 @@ import { html } from 'lit-html'
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
 import Base from './base'
 import registerComponent from './common/register-component'
+import './components/v-logo'
 import './components/v-router'
-import './components/v-headline'
 import './pages/page-one'
 import './pages/page-two'
 
@@ -15,10 +15,10 @@ class VApp extends Base {
 
   onMount() {
     this.setActivePage('v-page-one')
-    this.getChild('v-router').addEventListener(
-      'nav-changed',
-      ({ detail: { route } }) => this.navigate(route)
-    )
+    this.shadowRoot
+      .querySelector('#root')
+      .addEventListener('nav-changed', ({ detail: { route } }) => this.navigate(route)
+      )
   }
 
   navigate(route) {
@@ -31,14 +31,15 @@ class VApp extends Base {
     this.htmlToRender = html`
       ${unsafeHTML(pageTag)}
     `
-    this._render()
+    history.pushState({}, page, page.split('v-')[1])
+    this.updateTpl()
   }
 
   tpl() {
     return this.htmlToRender
       ? html`
-          <div>
-            <v-headline>Vanilla Website</v-headline>
+          <div id="root">
+            <v-logo></v-logo>
             <v-router></v-router>
             ${this.htmlToRender}
           </div>
