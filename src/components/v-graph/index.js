@@ -1,5 +1,5 @@
 import { html } from 'lit-html'
-import Base from '../../base.js'
+import Base from '../../base'
 
 class VGraph extends Base {
   _html() {

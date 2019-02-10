@@ -1,15 +1,14 @@
-import Base from '../../base.js'
-import styles from './styles.js'
+import { html } from 'lit-html'
+import Base from '../../base'
 
 class VHeadline extends Base {
   _html() {
-    const tpl = txt => `
-          ${styles}
-          <h1>
-            ${txt}
-          </h1>
-        `
-    return tpl(this.getAttribute('text') || 'Sample Headline')
+    const graphTpl = txt => html`
+      <h1>${txt}</h1>
+    `
+    return html`
+      ${graphTpl(this.getAttribute('text'))}
+    `
   }
 }
 

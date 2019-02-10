@@ -1,9 +1,11 @@
-import Base from '../../base.js'
+import { html } from 'lit-html'
+import Base from '../../base'
 
 class VPageTwo extends Base {
   _html() {
-    const tpl = `<div>page two</div>`
-    return tpl
+    return html`
+      <div>page two</div>
+    `
   }
 }
 
