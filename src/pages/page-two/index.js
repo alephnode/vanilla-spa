@@ -2,6 +2,7 @@ import { html } from 'lit-html'
 import Base from '../../base'
 import '../../components/v-headline'
 import '../../components/v-graph'
+import '../../components/v-img-container'
 import registerComponent from '../../common/register-component'
 
 class VPageTwo extends Base {
@@ -18,7 +19,7 @@ class VPageTwo extends Base {
       <v-graph>Welcome to the page</v-graph>
       ${this._img &&
         html`
-          <img src=${this._img} />
+          <v-img-container src=${this._img} />
         `}
     `
   }

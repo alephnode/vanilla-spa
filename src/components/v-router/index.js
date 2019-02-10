@@ -1,14 +1,20 @@
 import { html } from 'lit-html'
+import { repeat } from 'lit-html/directives/repeat.js'
 import Base from '../../base'
 import '../v-link'
 import registerComponent from '../../common/register-component'
+import routes from '../../common/routes'
 
 class VRouter extends Base {
   tpl() {
     return html`
       <nav>
-        <v-link to="v-page-one">page one</v-link>
-        <v-link to="v-page-two">page two</v-link>
+        ${repeat(
+          routes,
+          r => html`
+            <v-link to=${r}>${r.split('v-')[1]}</v-link>
+          `
+        )}
       </nav>
     `
   }
