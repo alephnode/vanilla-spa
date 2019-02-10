@@ -33,7 +33,7 @@ class VApp extends Base {
     this._render()
   }
 
-  _html() {
+  tpl() {
     return this._htmlToRender
       ? html`
           <div>

@@ -3,7 +3,7 @@ import Base from '../../base'
 import registerComponent from '../../common/register-component'
 
 class VPageTwo extends Base {
-  _html() {
+  tpl() {
     return html`
       <div>page two</div>
     `

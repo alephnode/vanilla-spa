@@ -3,7 +3,7 @@ import Base from '../../base'
 import registerComponent from '../../common/register-component'
 
 class VGraph extends Base {
-  _html() {
+  tpl() {
     const graphTpl = txt => html`
       <p>${txt}</p>
     `

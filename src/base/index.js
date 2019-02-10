@@ -16,12 +16,12 @@ class Base extends HTMLElement {
   }
 
   _render() {
-    render(this._html(), this.shadowRoot)
+    render(this.tpl(), this.shadowRoot)
   }
 
   /*abstract*/ onMount() {}
   /*abstract*/ onUnmount() {}
-  /*abstract*/ _html() {}
+  /*abstract*/ tpl() {}
 }
 
 export default Base
