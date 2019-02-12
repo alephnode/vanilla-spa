@@ -1,6 +1,7 @@
 import { html } from 'lit-html'
 import Base from '../../base'
 import registerComponent from '../../common/register-component'
+import styles from './styles'
 
 class VLink extends Base {
   constructor() {
@@ -14,7 +15,12 @@ class VLink extends Base {
 
   tpl() {
     return html`
-      <div id=${this.getAttribute('to' || 'home')} @click=${this.handleClick}>
+      ${styles}
+      <div
+        class="link"
+        id=${this.getAttribute('to' || 'home')}
+        @click=${this.handleClick}
+      >
         <slot></slot>
       </div>
     `

@@ -1,4 +1,6 @@
-export default `
+import { html } from 'lit-html'
+
+export default html`
   <style>
     h1 {
       text-align: center;
