@@ -14,7 +14,7 @@ class VPageTwo extends Base {
 
   tpl() {
     return html`
-      <v-graph>Welcome to the page</v-graph>
+      <v-graph>Images of interest</v-graph>
       ${this._img &&
         html`
           <v-img-container
