@@ -16,7 +16,8 @@ export default html`
       text-shadow: -2px 2px 0px #faf0e8, -6px 6px 0px #034486;
     }
     h1:hover {
-      text-shadow: -2px 2px 0px #faf0e8, -10px 10px 0px #034486;
+      color: #e3b1e3;
+      text-shadow: -2px 2px 0px #faf0e8, -10px 10px 0px #30669c;
     }
   </style>
 `

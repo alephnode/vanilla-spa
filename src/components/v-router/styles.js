@@ -4,7 +4,6 @@ export default html`
   <style>
     .linkTxt {
       transition: border-width 0.2s ease;
-      transition: color 0.2s ease;
       -webkit-font-smoothing: antialiased;
       font-weight: 600;
       font-family: 'Playfair Display', serif;
