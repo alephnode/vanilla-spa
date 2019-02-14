@@ -1,5 +1,10 @@
 body {
-  background: #faf0e8;
+  --primary-color: plum;
+  --secondary-color: #602e5a;
+  --txt-color: #034486;
+  --background-color: #faf0e8;
+
+  background: var(--background-color);
   margin: 0;
   padding: 0;
   overflow: hidden;

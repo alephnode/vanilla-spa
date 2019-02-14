@@ -9,7 +9,7 @@ class VLogo extends Base {
     return html`
       <div>
         <v-headline>
-          <v-link to="v-page-one">Vanilla Website</v-link>
+          <v-link to="v-page-one">Performance Zone</v-link>
         </v-headline>
       </div>
     `

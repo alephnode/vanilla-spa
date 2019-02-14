@@ -7,7 +7,7 @@ export default html`
       font-weight: 600;
       font-family: 'Playfair Display', serif;
       text-align: center;
-      color: #034486;
+      color: var(--txt-color);
       font-size: 1.25rem;
       padding: 20px;
     }

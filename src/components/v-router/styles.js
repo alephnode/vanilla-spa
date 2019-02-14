@@ -7,13 +7,13 @@ export default html`
       font-weight: 600;
       font-family: 'Playfair Display', serif;
       text-align: center;
-      color: #602e5a;
+      color: var(--secondary-color);
       font-size: 1.25rem;
       padding: 10px;
       padding-bottom: 9px;
     }
     .linkTxt:hover {
-      border-bottom: 9px solid #7ef7e3;
+      border-bottom: 9px solid var(--txt-color);
       padding-bottom: 0;
     }
   </style>
