@@ -1,11 +1,14 @@
 import { html } from 'lit-html'
 import Base from '../../base'
+import '../v-container'
 import registerComponent from '../../common/register-component'
 
 class VImageContainer extends Base {
   tpl() {
     return html`
-      <div><img src=${this.getAttribute('src')} /></div>
+      <v-container type="ccc"
+        ><img src=${this.getAttribute('src')}
+      /></v-container>
     `
   }
 }

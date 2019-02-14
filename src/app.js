@@ -3,7 +3,6 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
 import Base from './base'
 import registerComponent from './common/register-component'
 import routes from './common/routes'
-import './components/v-logo'
 import './components/v-router'
 import './pages/page-one'
 import './pages/page-two'
@@ -44,8 +43,13 @@ class VApp extends Base {
   tpl() {
     return this.htmlToRender
       ? html`
+          <style>
+            #root {
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+          </style>
           <div id="root">
-            <v-logo></v-logo>
             <v-router></v-router>
             ${this.htmlToRender}
           </div>

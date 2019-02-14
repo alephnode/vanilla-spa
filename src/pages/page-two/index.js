@@ -1,6 +1,5 @@
 import { html } from 'lit-html'
 import Base from '../../base'
-import '../../components/v-headline'
 import '../../components/v-graph'
 import '../../components/v-img-container'
 import registerComponent from '../../common/register-component'
@@ -15,11 +14,12 @@ class VPageTwo extends Base {
 
   tpl() {
     return html`
-      <v-headline>Page Two</v-headline>
       <v-graph>Welcome to the page</v-graph>
       ${this._img &&
         html`
-          <v-img-container src=${this._img} />
+          <v-img-container
+            src="https://www.apogeephoto.com/wp-content/uploads/2016/july2014/Sanders_photos/black-white.jpg"
+          ></v-img-container>
         `}
     `
   }
