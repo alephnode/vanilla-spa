@@ -1,0 +1,11 @@
+{
+  "name": "vanilla-spa",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve --single"
+  },
+  "dependencies": {
+    "lit-html": "^1.0.0"
+  }
+}

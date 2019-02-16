@@ -1,5 +1,6 @@
-node_modules
+basic/node_modules
+optimized/node_modules
 .eslintrc.js
-.cache
-dist
+optimized/.cache
+optimized/dist
 yarn-error.log

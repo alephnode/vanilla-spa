@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import Base from '../../base'
-import styles from './styles.js'
+import styles from './styles'
 import registerComponent from '../../common/register-component'
 
 class VContainer extends Base {
