@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "vanilla-site",
+  "type": "static",
+  "static": {
+    "cleanUrls": true,
+    "directoryListing": false,
+    "rewrites": [{ "source": "/*", "destination": "/index.html" }]
+  }
+}
