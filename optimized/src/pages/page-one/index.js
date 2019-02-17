@@ -10,7 +10,7 @@ class VPageOne extends Base {
     return html`
       ${styles}
       <v-container>
-        <v-graph>Intro to the performance test.</v-graph>
+        <v-graph>Intro to ~the~ performance test.</v-graph>
       </v-container>
     `
   }
