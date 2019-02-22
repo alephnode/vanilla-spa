@@ -4,8 +4,6 @@ import Base from './base'
 import registerComponent from './common/register-component'
 import routes from './common/routes'
 import './components/v-router'
-import './pages/page-one'
-import './pages/page-two'
 
 class VApp extends Base {
   constructor() {
@@ -13,9 +11,9 @@ class VApp extends Base {
     this.navigate = this.navigate.bind(this)
   }
 
-  onMount() {
+  async onMount() {
     let page = location.pathname.substr(1)
-    this.setActivePage((page && this.isRegistered(page)) || 'v-page-one')
+    await this.setActivePage((page && this.isRegistered(page)) || 'v-page-one')
     this.shadowRoot
       .querySelector('#root')
       .addEventListener('nav-changed', ({ detail: { route } }) => this.navigate(route)
@@ -26,13 +24,14 @@ class VApp extends Base {
     this.setActivePage(route)
   }
 
-  setActivePage(page) {
+  async setActivePage(page) {
     if (!page) return
     const pageTag = `<${page}></${page}>`
     this.htmlToRender = html`
       ${unsafeHTML(pageTag)}
     `
     history.pushState({}, page, page.split('v-')[1])
+    await import(`./pages/${page.split('v-')[1]}`)
     this.updateTpl()
   }
 
