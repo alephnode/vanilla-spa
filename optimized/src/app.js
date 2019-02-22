@@ -26,12 +26,13 @@ class VApp extends Base {
 
   async setActivePage(page) {
     if (!page) return
+    let prettyName = page.split('v-')[1]
     const pageTag = `<${page}></${page}>`
     this.htmlToRender = html`
       ${unsafeHTML(pageTag)}
     `
-    history.pushState({}, page, page.split('v-')[1])
-    await import(`./pages/${page.split('v-')[1]}`)
+    history.pushState({}, page, prettyName)
+    await import(`./pages/${prettyName}`)
     this.updateTpl()
   }
 
