@@ -24,4 +24,26 @@ module.exports = {
       template: resolve(__dirname, 'index.html'),
     }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        // vendor chunk
+        vendor: {
+          // name of the chunk
+          name: 'vendor',
+
+          // async + async chunks
+          chunks: 'all',
+
+          // import file path containing node_modules
+          test: /node_modules/,
+
+          // priority
+          priority: 20,
+        },
+      },
+    },
+  },
 }
