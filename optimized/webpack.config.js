@@ -9,8 +9,8 @@ module.exports = {
     app: './app.js',
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
+    chunkFilename: '[name].[hash].bundle.js',
     path: resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -29,18 +29,10 @@ module.exports = {
       cacheGroups: {
         default: false,
         vendors: false,
-        // vendor chunk
         vendor: {
-          // name of the chunk
           name: 'vendor',
-
-          // async + async chunks
           chunks: 'all',
-
-          // import file path containing node_modules
           test: /node_modules/,
-
-          // priority
           priority: 20,
         },
       },
