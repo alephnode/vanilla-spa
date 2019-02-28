@@ -7,7 +7,7 @@ class VImageContainer extends Base {
   tpl() {
     return html`
       <v-container type="ccc"
-        ><img src=${this.getAttribute('src')}
+        ><img src=${this.getAttribute('src')} alt=${this.getAttribute('alt')}
       /></v-container>
     `
   }

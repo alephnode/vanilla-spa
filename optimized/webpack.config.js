@@ -2,6 +2,7 @@
 const webpack = require('webpack')
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -23,6 +24,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'index.html'),
     }),
+    new CopyWebpackPlugin([
+      {
+        from: './static',
+        to: './',
+      },
+    ]),
   ],
   optimization: {
     splitChunks: {

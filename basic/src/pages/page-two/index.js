@@ -9,6 +9,7 @@ class VPageTwo extends Base {
     return html`
       <v-graph>Images of interest</v-graph>
       <v-img-container
+        alt="Black and white example photo"
         src="https://www.apogeephoto.com/wp-content/uploads/2016/july2014/Sanders_photos/black-white.jpg"
       ></v-img-container>
     `

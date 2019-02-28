@@ -1,5 +1,7 @@
 basic/node_modules
 optimized/node_modules
+optimized/src/static/cert.pem
+optimized/src/static/key.pem
 .eslintrc.js
 optimized/.cache
 optimized/dist

@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sample site" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Vanilla Site</title>
     <link rel="stylesheet" href="./src/common/styles.css" />
@@ -14,5 +17,16 @@
   </head>
   <body>
     <v-app></v-app>
+    <noscript
+      >If you don't allow JavaScript, you're going to have a bad time
+      here!</noscript
+    >
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw-v6.js').then(function() {
+          console.log('Service Worker Registered')
+        })
+      }
+    </script>
   </body>
 </html>
