@@ -8,20 +8,20 @@
     "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
-    "express": "^4.16.4",
-    "html-webpack-plugin": "^3.2.0",
-    "lit-html": "^1.0.0",
-    "prpl-server": "^1.4.0",
-    "webpack": "^4.29.4",
-    "webpack-dev-server": "^3.1.14"
+    "lit-html": "^1.0.0"
   },
   "devDependencies": {
+    "css-loader": "^2.1.0",
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^5.0.0",
-    "webpack-cli": "^3.2.3"
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }

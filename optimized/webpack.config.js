@@ -19,6 +19,14 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+      },
+    ],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({

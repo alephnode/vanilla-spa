@@ -4,6 +4,7 @@ import Base from './base'
 import registerComponent from './common/register-component'
 import routes from './common/routes'
 import './components/v-router'
+import './common/styles.css'
 
 class VApp extends Base {
   constructor() {
