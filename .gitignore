@@ -6,3 +6,4 @@ optimized/src/static/key.pem
 optimized/.cache
 optimized/dist
 yarn-error.log
+.netlify
