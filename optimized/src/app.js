@@ -32,7 +32,7 @@ class VApp extends Base {
     this.htmlToRender = html`
       ${unsafeHTML(pageTag)}
     `
-    history.pushState({}, page, prettyName)
+    // history.pushState({}, page, prettyName)
     await import(`./pages/${prettyName}`)
     this.updateTpl()
   }
