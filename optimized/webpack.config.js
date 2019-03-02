@@ -10,8 +10,8 @@ module.exports = {
     app: './app.js',
   },
   output: {
-    filename: '[name].[hash].bundle.js',
-    chunkFilename: '[name].[hash].bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: resolve(__dirname, 'dist'),
   },
   devServer: {

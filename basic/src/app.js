@@ -28,11 +28,14 @@ class VApp extends Base {
 
   setActivePage(page) {
     if (!page) return
+    let prettyName = page.split('v-')[1]
     const pageTag = `<${page}></${page}>`
     this.htmlToRender = html`
       ${unsafeHTML(pageTag)}
     `
-    history.pushState({}, page, page.split('v-')[1])
+    page == 'v-page-one'
+      ? history.pushState({}, page, '/')
+      : history.pushState({}, page, prettyName)
     this.updateTpl()
   }
 
